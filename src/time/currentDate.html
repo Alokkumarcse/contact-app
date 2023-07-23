@@ -1,0 +1,12 @@
+<template>
+  <h2>${date}</h2>
+  <div class="container">
+    <h2>${message}</h2>
+    <div if.bind="change">
+      <button click.delegate="changeMessage()">change Message</button>
+    </div>
+    <div else>
+      <button click.delegate="changeMessage()">change Message</button>
+    </div>
+  </div>
+</template>

@@ -4,9 +4,14 @@ import { HttpClient } from "aurelia-http-client";
 let baseUrl = "https://jsonplaceholder.typicode.com/users";
 
 @inject(HttpClient)
-export class UserData {
+export class UserList {
   constructor(httpClient) {
+    this.users = [];
     this.http = httpClient;
+  }
+
+  activate() {
+    this.getAll();
   }
 
   getAll() {

@@ -1,33 +1,17 @@
 <template>
-  <nav class="navbar" style="background-color: #e3f2fd;">
+  <!-- Navbar added here -->
+  <nav class="navbar" style="background-color: #e3f2fd">
     <div class="container-fluid">
       <div class="navbar-header center">
         <a href="#" class="navbar-brand"> Users Data </a>
       </div>
     </div>
   </nav>
-  <div class="container">
-    <h2>${message}</h2>
-    <div if.bind="change">
-      <button click.delegate="changeMessage()">change Message</button>
-    </div>
-    <div else>
-      <button click.delegate="changeMessage()">change Message</button>
-    </div>
-    <compose view-model="currentDate"></compose>
-  </div>
-  <div class="container">
-    <table class="table">
-      <tr>
-        <th>User</th>
-        <th>Id</th>
-        <th>Email</th>
-      </tr>
-      <tr repeat.for="user of users">
-        <th>${user.id}</th>
-        <th>${user.name}</th>
-        <th>${user.email}</th>
-      </tr>
-    </table>
-  </div>
+
+  <!-- add custom element by compose tag  -->
+  <compose view-model="./time/currentDate"></compose>
+  <compose view-model="./users/userList"></compose>
+
+  <!-- routed content show in router-view element -->
+  <router-view></router-view>
 </template>
