@@ -3,4 +3,17 @@
   <div>
     <button click.delegate="changeMessage()">change Message</button>
   </div>
+  <compose view-model="currentDate"></compose>
+  <table>
+    <tr>
+      <th>User</th>
+      <th>Id</th>
+      <th>Email</th>
+    </tr>
+    <tr repeat.for="user of users">
+      <th>${user.id}</th>
+      <th>${user.name}</th>
+      <th>${user.email}</th>
+    </tr>
+  </table>
 </template>
