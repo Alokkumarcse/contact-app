@@ -5,6 +5,7 @@ import { UserData } from "./api/userData";
 export class App {
   constructor(userData) {
     this.message = "";
+    this.change = true;
     this.userData = userData;
   }
 
@@ -43,6 +44,11 @@ export class App {
 
   changeMessage() {
     console.log("**********changeMessage is clicked**********");
-    this.message = "Good bye Aurelia";
+    this.change = !this.change;
+    if (this.change) {
+      this.message = "Hello from aurelia!";
+    } else {
+      this.message = "Good bye Aurelia";
+    }
   }
 }
