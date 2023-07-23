@@ -1,11 +1,11 @@
-import { HttpClient } from "aurelia-http-client";
 import { inject } from "aurelia-framework";
+import { UserData } from "./api/userData";
 
-@inject(HttpClient)
+@inject(UserData)
 export class App {
-  constructor(httpClient) {
+  constructor(userData) {
     this.message = "";
-    this.httpClient = httpClient;
+    this.userData = userData;
   }
 
   // static inject() {
@@ -14,14 +14,15 @@ export class App {
 
   activate() {
     this.message = "Hello from aurelia!";
+    return this.userData.getAll().then((users) => (this.users = users));
     // this.getMoviesData();
-    return this.httpClient
-      .get("https://jsonplaceholder.typicode.com/users")
-      .then((response) => {
-        console.log(response.content);
-        return (this.users = response.content);
-      })
-      .catch((err) => console.log(err.message));
+    // return this.httpClient
+    //   .get("https://jsonplaceholder.typicode.com/users")
+    //   .then((response) => {
+    //     console.log(response.content);
+    //     return (this.users = response.content);
+    //   })
+    //   .catch((err) => console.log(err.message));
   }
 
   // getMoviesData() {
@@ -41,7 +42,7 @@ export class App {
   // }
 
   changeMessage() {
-    console.log("changeMessage is clicked #############");
+    console.log("**********changeMessage is clicked**********");
     this.message = "Good bye Aurelia";
   }
 }
