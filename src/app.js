@@ -1,5 +1,26 @@
+import { PLATFORM } from "aurelia-framework";
 export class App {
-  constructor() {}
+  //  configure the router using configureRouter(config, router) method
+  configureRouter(config, router) {
+    this.router = router;
+    config.title = "Router test";
+    config.map([
+      {
+        route: ["", "userList"],
+        moduleId: PLATFORM.moduleName("./users/userList"),
+        name: "users",
+        title: "UsersList",
+        nav: true,
+      },
+      {
+        route: "about",
+        moduleId: PLATFORM.moduleName("./about/about"),
+        name: "about",
+        title: "About",
+        nav: true,
+      },
+    ]);
+  }
 }
 
 // import { inject } from "aurelia-framework";
