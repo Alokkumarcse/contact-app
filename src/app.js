@@ -6,18 +6,38 @@ export class App {
     config.title = "Router test";
     config.map([
       {
-        route: ["", "userList"],
-        moduleId: PLATFORM.moduleName("./users/userList"),
+        route: ["", "home"],
+        moduleId: PLATFORM.moduleName("./pages/home/home"),
+        name: "home",
+        title: "Home",
+        nav: true,
+      },
+      {
+        route: "about",
+        moduleId: PLATFORM.moduleName("./pages/about/about"),
+        name: "about",
+        title: "About",
+        nav: true,
+      },
+      {
+        route: "time",
+        moduleId: PLATFORM.moduleName("./pages/time/currentDate"),
+        name: "time",
+        title: "Current Time",
+        nav: true,
+      },
+      {
+        route: "userList",
+        moduleId: PLATFORM.moduleName("./pages/users/userList"),
         name: "users",
         title: "UsersList",
         nav: true,
       },
       {
-        route: "about",
-        moduleId: PLATFORM.moduleName("./about/about"),
-        name: "about",
-        title: "About",
-        nav: true,
+        route: "userList/details/:id",
+        moduleId: PLATFORM.moduleName("./pages/users/details/details"),
+        name: "details",
+        title: "User Details",
       },
     ]);
   }
