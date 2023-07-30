@@ -29,7 +29,7 @@ export class App {
       {
         route: "userList",
         moduleId: PLATFORM.moduleName("./pages/users/userList"),
-        name: "users",
+        name: "userList",
         title: "UsersList",
         nav: true,
       },
@@ -38,6 +38,12 @@ export class App {
         moduleId: PLATFORM.moduleName("./pages/users/details/details"),
         name: "details",
         title: "User Details",
+      },
+      {
+        route: "uerList/info/:id",
+        moduleId: PLATFORM.moduleName("./pages/users/info/info"),
+        name: "info",
+        title: "user Info",
       },
     ]);
   }

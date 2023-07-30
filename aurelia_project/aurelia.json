@@ -26,5 +26,12 @@
     "port": 8080,
     "host": "localhost",
     "output": "dist"
-  }
+  },
+  "dependencies": [
+    {
+      "name": "@fortawesome/fontawesome-free",
+      "path": "../node_modules/@fortawesome/fontawesome-free",
+      "main": "css/all.min.css"
+    }
+  ]
 }
